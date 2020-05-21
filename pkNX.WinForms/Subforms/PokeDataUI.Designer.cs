@@ -1185,11 +1185,6 @@
             0,
             0,
             0});
-            this.NUD_AmpEXP.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
             this.NUD_AmpEXP.Name = "NUD_AmpEXP";
             this.NUD_AmpEXP.Size = new System.Drawing.Size(42, 20);
             this.NUD_AmpEXP.TabIndex = 3;
