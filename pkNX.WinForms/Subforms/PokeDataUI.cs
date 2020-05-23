@@ -455,9 +455,14 @@ namespace pkNX.WinForms
 
         private void B_AmpExperience_Click(object sender, EventArgs e)
         {
-            decimal rate = NUD_AmpEXP.Value;
+            float rate = Convert.ToSingle(NUD_AmpEXP.Value);
+
             foreach (var p in Editor.Personal.Table)
+            {
                 p.BaseEXP = (int)Math.Max(0, Math.Min(byte.MaxValue, p.BaseEXP * rate));
+                if (p.BaseEXP == 0)
+                    p.EXPGrowth = (int)EXPGroup.Slow;
+            }
             LoadIndex(CB_Species.SelectedIndex);
             System.Media.SystemSounds.Asterisk.Play();
         }
